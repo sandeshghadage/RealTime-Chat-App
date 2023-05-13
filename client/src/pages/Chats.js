@@ -1,5 +1,6 @@
 import { AiOutlineSend } from "react-icons/ai";
 import { useEffect, useState } from "react";
+import style from "./Chat.module.css";
 
 function Chats({ socket, userName, room }) {
   const [currentMessage, setCurrentMessage] = useState("");
@@ -35,18 +36,18 @@ function Chats({ socket, userName, room }) {
       <div>
         <p>Live chat</p>
       </div>
-      <div className="chat-body">
+      <div className={style.chatbody}>
         {messageList.map((contents) => {
           return (
             <div
               key={contents.time}
-              className="message"
+              className={style.message}
               id={userName === contents.user ? "you" : "other"}
             >
-              <span className="message-content">
+              <span className={style.message_content}>
                 <p>{contents.message}</p>
               </span>
-              <span className="message-meta">
+              <span className={style.message_meta}>
                 <p>{contents.user}</p>
                 <p>{contents.time}</p>
               </span>

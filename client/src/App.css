@@ -1,3 +1,36 @@
-.App {
+.App{
+  display: flex;
+  flex-direction: column;
+  width: 100vw;
+  height: 100vh;
+  align-items: center;
+}
+.MainDiv{
+  width: 60vh;
+  height: 30vw;
+  background-color: aquamarine;
+  margin-top: 10vh;
+  padding-top: 2rem;
   text-align: center;
+  border-radius: 2rem;
+}
+.Container{
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  height: 100%;
+}
+.Div{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  width: 10rem;
+  height: 1rem;
+  margin-bottom: 4rem;
+  padding-left: 6rem;
+}
+.Div input {
+  width: 15rem;
+  height: 4rem;
+  padding: 0.5rem;
 }
