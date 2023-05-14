@@ -24,7 +24,7 @@ function App() {
         <div className="MainDiv">
           <div className="Container">
             <span>
-              <h1>Join A Chat</h1>
+              <h1>Join Chat</h1>
             </span>
             <span className="Div">
               <input
@@ -39,7 +39,9 @@ function App() {
               />
             </span>
             <span>
-              <button onClick={joinRoom}>Join A Room</button>
+              <button className="join__btn" onClick={joinRoom}>
+                Join Room
+              </button>
             </span>
           </div>
         </div>

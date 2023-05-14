@@ -32,40 +32,40 @@ function Chats({ socket, userName, room }) {
   }, [socket]);
 
   return (
-    <div>
-      <div>
-        <p>Live chat</p>
-      </div>
-      <div className={style.chatbody}>
-        {messageList.map((contents) => {
-          return (
-            <div
-              key={contents.time}
-              className={style.message}
-              id={userName === contents.user ? "you" : "other"}
-            >
-              <span className={style.message_content}>
-                <p>{contents.message}</p>
-              </span>
-              <span className={style.message_meta}>
-                <p>{contents.user}</p>
-                <p>{contents.time}</p>
-              </span>
-            </div>
-          );
-        })}
-      </div>
-      <div>
-        <input
-          type="text"
-          placeholder="Type a message"
-          value={currentMessage}
-          onChange={(e) => setCurrentMessage(e.target.value)}
-          onKeyPress={(event) => event.key === "Enter" && sendMessage()}
-        />
-        <button onClick={sendMessage}>
-          <AiOutlineSend />
-        </button>
+    <div className={style.chat__page}>
+      <div className={style.chat__container}>
+        <div className={style.roomDescriptionBox}>
+          <h3>Live chat</h3>
+        </div>
+        <div className={style.chatbody}>
+          {messageList.map((contents) => {
+            return (
+              <div
+                key={contents.time}
+                className={style.msg}
+                id={userName === contents.user ? "you" : "other"}
+              >
+                <div id={style.userName}>{contents.user}</div>
+                <div className={style.message_content}>
+                  {contents.message}
+                  <small>{contents.time}</small>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+        <div className={style.inputBox}>
+          <input
+            type="text"
+            placeholder="Type a message"
+            value={currentMessage}
+            onChange={(e) => setCurrentMessage(e.target.value)}
+            onKeyPress={(event) => event.key === "Enter" && sendMessage()}
+          />
+          <div id={style.sendBtn} onClick={sendMessage}>
+            <AiOutlineSend style={{ fontSize: "2rem" }} />
+          </div>
+        </div>
       </div>
     </div>
   );
